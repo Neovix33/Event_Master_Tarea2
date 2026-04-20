@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Event_Master_Tarea2_VLilloG</string>
+    <string name="titulo_inicio">EventMaster</string>
+    <string name="categorias">Categorias</string>
+    <string name="bienvenido_a_second_page">h</string>
+    <string name="enter_as_guest">hs</string>
 </resources>
