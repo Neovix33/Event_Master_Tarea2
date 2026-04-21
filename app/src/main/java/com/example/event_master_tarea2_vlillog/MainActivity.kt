@@ -19,6 +19,7 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
@@ -62,91 +63,18 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun BottomBar(navController: NavHostController) {
-    var textValue by remember { mutableStateOf("") }
     Row(
-        modifier = Modifier.fillMaxWidth().padding(bottom = 20.dp),
+        modifier = Modifier.fillMaxWidth().padding(bottom = 40.dp),
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.Center
+        horizontalArrangement = Arrangement.Center,
+
     ) {
 
-        TextField(
-            value = textValue,
-            onValueChange = { textValue = it },
-            label = { Text(stringResource(id = R.string.enter_as_guest)) },
-        )
-        Spacer(modifier = Modifier.size(20.dp))
-        Button(onClick = {navController.navigate(SecondPage("hola"))},
+        Button(onClick = {navController.navigate(NewCategoria)},
 
             ) {
-            Icon(Icons.AutoMirrored.Default.ArrowForward, contentDescription = "next")
+            Icon(Icons.Default.Add, contentDescription = "Agregar_categoria",modifier = Modifier.size(50.dp))
         }
     }
 }
 
-
-
-/*
-class ItemCard(val id: Int, val title: String, val icon: Int)
-
-
-@Composable
-fun GridCards() {
-    val items = listOf(
-        ItemCard(1, "Author", ""),
-        ItemCard(2, "Editor", R.drawable.edit_document),
-        ItemCard(3, "Moderator", R.drawable.user),
-        ItemCard(4, "Accountant", R.drawable.analytics),
-        ItemCard(5, "Designer", R.drawable.design_services),
-        ItemCard(6, "Developer", R.drawable.settings)
-    )
-    var selected by remember { mutableIntStateOf(0) }
-    LazyVerticalGrid(
-        columns = GridCells.Fixed(2),
-        contentPadding = PaddingValues(horizontal = 50.dp, vertical = 20.dp),
-        horizontalArrangement = Arrangement.spacedBy(20.dp),
-        verticalArrangement = Arrangement.spacedBy(20.dp)
-    ) {
-        items(items) {
-            Card(
-                colors = CardDefaults.cardColors(
-                    containerColor = if (selected == it.id)
-                        Color(48, 79, 251, 255)
-                    else
-                        Color(26, 40, 65, 255),
-                    contentColor = if (selected == it.id)
-                        Color.White
-                    else
-                        Color(62, 184, 200, 255)
-                ),
-                onClick = { selected = it.id }
-            ) {
-                Column(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(bottom = 30.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Row(
-                        modifier = Modifier.padding(top = 10.dp).fillMaxWidth(.9f),
-                        horizontalArrangement = Arrangement.End
-                    ) {
-                        Icon(
-                            Icons.Default.CheckCircle,
-                            contentDescription = "Check",
-                            modifier = Modifier.alpha(if (selected == it.id) 1f else 0f)
-                        )
-                    }
-                    Icon(
-                        painterResource(it.icon),
-                        contentDescription = "Author",
-                        modifier = Modifier.size(50.dp)
-                    )
-                    Text(
-                        "Author",
-                    )
-                }
-            }
-        }
-    }
-}
-*/

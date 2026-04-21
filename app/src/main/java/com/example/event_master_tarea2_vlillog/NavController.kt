@@ -3,7 +3,8 @@ package com.example.event_master_tarea2_vlillog
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -12,7 +13,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -26,6 +30,8 @@ object Home
 @Serializable
 data class SecondPage(val name: String)
 
+@Serializable
+object NewCategoria
 @Composable
 fun Navigation() {
     val navController = rememberNavController()
@@ -37,6 +43,9 @@ fun Navigation() {
         composable<SecondPage> { backstackEntry -> val args = backstackEntry.toRoute<SecondPage>()
             SecondPageScreen(navController = navController, name = args.name)
         }
+        composable<NewCategoria>{
+            NewCategoriaScreen(navController = navController)
+        }
     }
 }
 
@@ -47,7 +56,11 @@ fun HomeScreen(navController: NavHostController) {
         Category("Música"),
         Category("Deportes"),
         Category("Tecnología"),
-        Category("Arte")
+        Category("Arte"),
+        Category("Gaming"),
+        Category("Gaming"),
+        Category("Gaming"),
+        Category("Conferencias")
     )
 
     Scaffold(
@@ -67,7 +80,9 @@ fun HomeScreen(navController: NavHostController) {
 
             Text(stringResource(id = R.string.categorias))
 
-            LazyColumn {
+            LazyVerticalGrid(columns = GridCells.Fixed(2),
+                modifier = Modifier.padding(8.dp)
+            ) {
 
                 items(categories.size) { index ->
 
@@ -95,7 +110,20 @@ fun SecondPageScreen(navController: NavHostController, name: String) {
         fontWeight = FontWeight.Bold,
         fontSize = 30.sp
     )
+}
 
+@Composable
+fun NewCategoriaScreen(navController: NavHostController){
 
+    Column {
+
+        Text(
+            text = stringResource(id = R.string.Newcategoria),
+            color = Color.Black,
+            fontWeight = FontWeight.Bold,
+            fontSize = 30.sp
+        )
+
+    }
 }
 
