@@ -1,4 +1,4 @@
-package com.example.event_master_tarea2_vlillog.ui.theme
+package com.example.event_master_tarea2_vlillog.ui.theme.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

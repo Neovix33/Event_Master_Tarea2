@@ -1,4 +1,4 @@
-package com.example.event_master_tarea2_vlillog
+package com.example.event_master_tarea2_vlillog.ui.theme.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
