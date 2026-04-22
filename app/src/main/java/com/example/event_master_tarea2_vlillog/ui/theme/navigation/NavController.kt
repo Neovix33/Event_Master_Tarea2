@@ -14,6 +14,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -163,7 +164,7 @@ fun SecondPageScreen(navController: NavHostController, categoryName: String, vie
                     titleError = false
                     dateError = false
                 },
-                title = { Text("Nuevo Evento") },
+                title = { Text(stringResource(id= R.string.Nuevo_evento)) },
                 text = {
                     Column {
                         TextField(
@@ -172,17 +173,17 @@ fun SecondPageScreen(navController: NavHostController, categoryName: String, vie
                                 eventTitle = it 
                                 if (it.isNotEmpty()) titleError = false
                             },
-                            label = { Text("Título del evento *") },
+                            label = { Text(stringResource(id = R.string.Titulo_evento)) },
                             isError = titleError,
                             supportingText = {
-                                if (titleError) Text("El título es obligatorio")
+                                if (titleError) Text(stringResource(id = R.string.Titulo_obligatorio))
                             }
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         TextField(
                             value = eventDescription,
                             onValueChange = { eventDescription = it },
-                            label = { Text("Descripción (Opcional)") }
+                            label = { Text(stringResource(id = R.string.Descripcion)) }
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         TextField(
@@ -191,10 +192,10 @@ fun SecondPageScreen(navController: NavHostController, categoryName: String, vie
                                 eventDate = it 
                                 if (it.isNotEmpty()) dateError = false
                             },
-                            label = { Text("Fecha *") },
+                            label = { Text(stringResource(id = R.string.Fecha_evento)) },
                             isError = dateError,
                             supportingText = {
-                                if (dateError) Text("La fecha es obligatoria")
+                                if (dateError) Text(stringResource(id = R.string.Fecha_obligatoria))
                             }
                         )
                     }
@@ -241,7 +242,7 @@ fun EventDetailScreen(navController: NavHostController, categoryName: String, ev
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
-                title = { Text("Detalle del Evento") },
+                title = { Text(stringResource(id = R.string.Detalle_evento)) },
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Volver")
@@ -282,13 +283,13 @@ fun EventDetailScreen(navController: NavHostController, categoryName: String, ev
                 ) {
                     Column(modifier = Modifier.padding(20.dp)) {
                         Text(
-                            text = "Descripción",
+                            text = stringResource(id = R.string.Descripcion_2),
                             fontWeight = FontWeight.SemiBold,
                             fontSize = 18.sp
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         Text(
-                            text = event.description.ifEmpty { "Sin descripción" },
+                            text = event.description.ifEmpty { stringResource(id = R.string.SinDescricpion) },
                             fontSize = 16.sp
                         )
                     }

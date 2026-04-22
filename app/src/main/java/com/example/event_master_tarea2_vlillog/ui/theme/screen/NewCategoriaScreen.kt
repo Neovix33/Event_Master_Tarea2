@@ -7,11 +7,12 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.event_master_tarea2_vlillog.R
 import com.example.event_master_tarea2_vlillog.ui.theme.viewmodel.EventViewModel
 
 @Composable
@@ -29,7 +30,7 @@ fun NewCategoriaScreen(navController: NavHostController, viewModel: EventViewMod
     ) {
 
         Text(
-            text = "Nueva Categoría",
+            text = stringResource(id = R.string.Nueva_categoria),
             fontSize = 28.sp,
             fontWeight = FontWeight.Bold
         )
@@ -42,12 +43,12 @@ fun NewCategoriaScreen(navController: NavHostController, viewModel: EventViewMod
                 categoryName = it
                 if (it.isNotEmpty()) showError = false
             },
-            label = { Text("Nombre de la categoría") },
+            label = { Text(stringResource(id = R.string.Nombre_categoria)) },
             isError = showError,
             supportingText = {
                 if (showError) {
                     Text(
-                        text = "El nombre no puede estar vacío",
+                        text = stringResource(id = R.string.Error_vacio),
                         color = MaterialTheme.colorScheme.error
                     )
                 }
@@ -68,7 +69,7 @@ fun NewCategoriaScreen(navController: NavHostController, viewModel: EventViewMod
         ) {
             Icon(Icons.Default.CheckCircle, contentDescription = "Guardar")
             Spacer(modifier = Modifier.width(8.dp))
-            Text("Guardar")
+            Text(stringResource(id = R.string.Guardar))
         }
     }
 }

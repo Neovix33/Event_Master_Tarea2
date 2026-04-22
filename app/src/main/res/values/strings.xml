@@ -5,4 +5,22 @@
     <string name="bienvenido_a_second_page">h</string>
     <string name="enter_as_guest">hs</string>
     <string name="Newcategoria">nuevaCategoria</string>
+
+    <string name="Nueva_categoria">Nueva Categoría</string>
+    <string name="Nombre_categoria">Nombre Categoría</string>
+    <string name="Error_vacio">El nombre no puede estar vacío</string>
+    <string name="Guardar">Guardar</string>
+    <string name="Nuevo_evento">Nuevo evento</string>
+    <string name="Titulo_evento">Título del evento *</string>
+    <string name="Titulo_obligatorio">El titulo es obligatorio</string>
+    <string name="Descripcion">Descripción (Opcional)</string>
+    <string name="Fecha_evento">Fecha *</string>
+    <string name="Fecha_obligatoria">La fecha es obligatoria</string>
+    <string name="Descripcion_2">Descripción</string>
+
+
+    <string name="SinDescricpion">Sin descripción</string>
+    <string name="Detalle_evento">Detalle del evento</string>
+
+
 </resources>

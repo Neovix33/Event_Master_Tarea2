@@ -14,16 +14,32 @@ class EventViewModel : ViewModel() {
             val musica = categories.find { it.name == "Música" }
             if (musica?.events?.isEmpty() == true) {
                 musica.events.addAll(listOf(
-                    Event("Lollapalooza", "Festival de música internacional", "15-03-2024"),
-                    Event("Concierto Rock", "Bandas locales en vivo", "20-05-2024")
+                    Event("Lollapalooza", "Festival de música internacional con múltiples escenarios.", "15-03-2024"),
+                    Event("Concierto Rock", "Bandas locales de rock alternativo en el centro de la ciudad.", "20-05-2024")
                 ))
             }
 
             val deportes = categories.find { it.name == "Deportes" }
             if (deportes?.events?.isEmpty() == true) {
                 deportes.events.addAll(listOf(
-                    Event("Maratón Santiago", "Carrera 42K por la ciudad", "07-04-2024"),
-                    Event("Final Fútbol", "Torneo nacional de apertura", "12-06-2024")
+                    Event("Maratón Santiago", "La carrera más grande de Chile, recorriendo las principales calles.", "07-04-2024"),
+                    Event("Final Fútbol", "Gran final del campeonato nacional entre los mejores equipos.", "12-06-2024")
+                ))
+            }
+
+            val tecnologia = categories.find { it.name == "Tecnología" }
+            if (tecnologia?.events?.isEmpty() == true) {
+                tecnologia.events.addAll(listOf(
+                    Event("Cumbre Tech", "Conferencia sobre las últimas tendencias en IA y desarrollo móvil.", "10-08-2024"),
+                    Event("Hackathon 2024", "Competencia de programación de 48 horas para resolver desafíos sociales.", "05-11-2024")
+                ))
+            }
+
+            val arte = categories.find { it.name == "Arte" }
+            if (arte?.events?.isEmpty() == true) {
+                arte.events.addAll(listOf(
+                    Event("Expo Pintura", "Muestra de talentos locales con técnicas de óleo y acuarela.", "22-04-2024"),
+                    Event("Galería Moderna", "Inauguración de la nueva colección de escultura abstracta.", "30-07-2024")
                 ))
             }
         }

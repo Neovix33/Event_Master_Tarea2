@@ -47,7 +47,7 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.navigation.compose)
     implementation(libs.kotlin.serialization)
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.6")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.10.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
